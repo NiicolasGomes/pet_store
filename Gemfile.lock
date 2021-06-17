@@ -1,0 +1,86 @@
+GEM
+  specs:
+    httparty (0.17.0)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2021.0225)
+    multi_xml (0.6.0)
+
+GEM
+  remote: https://MVZrB-4Zc1vt8x1SeDnEYfymn3cBjVWVo@gem.fury.io/seekr/
+  specs:
+    hi_httparty (1.1.0)
+      bundler (~> 2.0)
+      httparty (~> 0.17.0)
+    hi_token_fenix (0.1.0)
+      bundler (~> 2.0)
+      hi_httparty (~> 1.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (6.1.3.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    concurrent-ruby (1.1.9)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.12)
+    diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
+    fastri (0.3.1.1)
+    i18n (1.8.10)
+      concurrent-ruby (~> 1.0)
+    minitest (5.14.4)
+    rake (13.0.3)
+    rcodetools (0.8.5.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.2)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-retry (0.6.1)
+      rspec-core (> 3.3)
+    rspec-support (3.8.3)
+    ruby-debug-ide (0.7.2)
+      rake (>= 0.8.1)
+    rufo (0.13.0)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
+    zeitwerk (2.4.2)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  debase!
+  dotenv!
+  factory_bot (= 5.1.1)!
+  faker!
+  fastri!
+  hi_httparty!
+  hi_token_fenix (= 0.1.0)!
+  rcodetools!
+  rspec (= 3.8.0)!
+  rspec-retry (= 0.6.1)!
+  ruby-debug-ide!
+  rufo!
+
+BUNDLED WITH
+   2.2.19
