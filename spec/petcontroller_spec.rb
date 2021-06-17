@@ -2,7 +2,7 @@ require_relative '../app/pet.rb'
 
 describe do
     subject(:pet) { Pet.new }
-    let(:body_pets) { attributes_for(:attr_pet) }
+    let(:body_pets) { attributes_for(:attr_pet) } #Factory com o modelo do body que as APIs utilizam
     
     context 'EXTRA' do
         it 'DOTENV' do #TODO: Teste básico nos campos do DOTENV
@@ -11,7 +11,7 @@ describe do
             puts ENV['PASSWORD']
         end
         it 'FACTORY_BOT' do #TODO: Validando a factory e exibindo junto ao body ideal que as APIs utilizam
-            puts body_pets  #Factory :attr_pet
+            puts body_pets  # Apenas verificando os valores da Fabrica e do body(json) que a API utiliza
             puts body_pets.to_json
             puts body = { 
                 "id": 0,
@@ -34,8 +34,7 @@ describe do
             resultado_invalido = pet.create(body_invalido.to_json)
             expect(resultado_invalido.code).to eq(200) #? Por que ele me retornou 200 em um body inválido? está correto este comportamento?
             puts "Criação Inválida:  #{resultado_invalido}"
-        end
-        
+        end        
         it 'READ LIST' do #TODO: Lê todos os registros de PETs por status
             status = ['available', 'pending', 'sold', 'status_invalido']
             #? Criar uma varial como a 'resultado_available' para guardar cada retorno é o ideal? ou é melhor usar somente uma (ex.: 'resultado')?
@@ -87,14 +86,14 @@ describe do
         #     expect(resultado_criacao.code).to eq(200)
         #     puts resultado_criacao #Exibindo resultado apenas para checkar
 
-        #     #formData = FormData.new()
+        #     #formData = FormData.new() #! Apenas algumas tentativas de fazer funcionar, desconsiderar este bloco
         #     #subject(:formData) { FormData.new }
         #     #formData.append = name = 'TESTEFORMDATA', status = 'available'
         #     #form_data = 'name=TESTE&status=available'
         #     resultado = pet.update_data(resultado_criacao['id'])
-        #     expect(resultado.code).to eq(405)
+        #     expect(resultado.code).to eq(200)
         # end
-        it 'DELETE' do #!FUNCIONAL PORÉM NEM SEMPRE, NO SWAGGER PRECISAMOS RODAR A API MAIS DE UMA VEZ PARA TERMOS SUCESSO
+        it 'DELETE' do #! ESTÁ FUNCIONAL, PORÉM NEM SEMPRE!! NO SWAGGER PRECISAMOS RODAR A API MAIS DE UMA VEZ PARA TERMOS SUCESSO
             resultado_criacao = pet.create(body_pets.to_json) #Criando um registro para podermos testar o GET sem necessidade de ficar informando os parametros
             expect(resultado_criacao.code).to eq(200)
             puts resultado_criacao #Exibindo resultado apenas para checkar
